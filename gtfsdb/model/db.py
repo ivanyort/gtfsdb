@@ -78,7 +78,7 @@ class Database(object):
         for cls in self.sorted_classes:
             self.create_table(cls)
 
-    def create_table(self, orm_class, check_first=True, drop_first=True):
+    def create_table(self, orm_class, check_first=True, drop_first=False):
         log.debug("create table: {0}".format(orm_class.__table__))
         try:
             if drop_first:
